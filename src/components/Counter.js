@@ -8,7 +8,7 @@ class Counter extends Component {
     // only increments if the counter value is odd
 
     e.preventDefault();
-    this.props.incrementIfOdd;
+    this.props.incrementIfOdd();
   };
 
   incrementAsync = () => {
