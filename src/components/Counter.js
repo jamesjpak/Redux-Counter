@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { increment, decrement, incrementIfOdd } from "../actions";
+import { increment, decrement, incrementIfOdd, incrementAfterSec } from "../actions";
 
 class Counter extends Component {
     
@@ -12,9 +12,18 @@ class Counter extends Component {
     this.props.incrementIfOdd();
   };
 
-  incrementAsync = () => {
+
+
+  incrementAsync = e => {
     // Stretch Problem: Implement an increment function that
     // increments after waiting for one second
+
+    e.preventDefault();
+
+    setTimeout( () => {
+        this.props.incrementAfterSec();
+    }, 2000)
+    
   };
 
   increment = e => {
@@ -67,5 +76,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { increment, decrement, incrementIfOdd }
+  { increment, decrement, incrementIfOdd, incrementAfterSec }
 )(Counter);

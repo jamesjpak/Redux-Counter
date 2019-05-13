@@ -3,6 +3,8 @@ export const DECREMENT = 'DECREMENT';
 
 export const ODDCASE = 'ODDCASE';
 
+export const ONESEC = 'ONESEC';
+
 // Our action creators will return
 // an action packet that our reducer will
 // receive. What does the action packet look like?
@@ -31,6 +33,15 @@ export const incrementIfOdd = specialClick => {
 
   return {
     type: ODDCASE,
-    payload: specialClick,
+    payload: specialClick
   }
 };
+
+export const incrementAfterSec = banana => {
+
+  return {
+    type: ONESEC,
+    payload: banana
+  }
+}
+
