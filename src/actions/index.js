@@ -33,4 +33,4 @@ export const incrementIfOdd = specialClick => {
     type: ODDCASE,
     payload: specialClick,
   }
-}
+};

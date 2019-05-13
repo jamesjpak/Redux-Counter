@@ -25,11 +25,12 @@ export default (state = initialState, action) => {
       count: state.count - 1
     };
     case ODDCASE:
-    if( state.count )
+    if( state.count % 2 != 0) {
     return {
       ...state,
       count: state.count + 1
-    };
+    }
+  };
     default:
       return state;
   }

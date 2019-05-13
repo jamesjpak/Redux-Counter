@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { increment, decrement } from "../actions";
+import { increment, decrement, incrementIfOdd } from "../actions";
 
 class Counter extends Component {
+    
   incrementIfOdd = e => {
     // Stretch Problem: Implement an increment function that
     // only increments if the counter value is odd
@@ -38,6 +39,7 @@ class Counter extends Component {
         {/* Uncomment these button tags if you got
                 around to implementing the extra credit functions */}
         <button onClick={this.incrementIfOdd}>Increment if odd</button>
+
         <button onClick={this.incrementAsync}>Increment async</button>
       </p>
     );
@@ -65,5 +67,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { increment, decrement }
+  { increment, decrement, incrementIfOdd }
 )(Counter);
